@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERPNext Data Fetcher</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Fetch Data from ERPNext</h1>
+
+        <!-- Resource Selector -->
+        <div class="resource-selector">
+            <label for="resourceType">Select Resource:</label>
+            <select id="resourceType">
+                <option value="Sales%20Invoice">Sales Invoice</option>
+                <option value="Customer">Customer</option>
+                <option value="Item">Item</option>
+                <option value="Project">Projects List</option>
+                <option value="Employee">Employee List</option>
+                <option value="User">User List</option>
+            </select>
+        </div>
+
+        <!-- Fetch Button -->
+        <button id="fetchDataBtn">Fetch Data</button>
+
+        <!-- Loading Indicator -->
+        <div id="loading" class="hidden">Loading...</div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search by name or customer...">
+        </div>
+
+        <!-- Export Buttons -->
+        <div class="export-buttons">
+            <button id="exportCSV">Export as CSV</button>
+            <button id="exportJSON">Export as JSON</button>
+        </div>
+
+        <!-- Document List -->
+        <div id="dataList"></div>
+
+        <!-- Document Details -->
+        <div id="documentDetails" class="hidden">
+            <h2>Document Details</h2>
+            <pre id="detailsDisplay"></pre>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>

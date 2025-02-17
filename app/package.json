@@ -1,0 +1,47 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "dev": "nodemon --exec electron .",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux",
+    "build:all": "electron-builder -mwl"
+  },
+  "keywords": [],
+  "author": "irfanzahoor",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "electron-store": "^8.1.0",
+    "electron-devtools-installer": "^3.2.0"
+  },
+  "devDependencies": {
+    "electron": "^34.2.0",
+    "nodemon": "^3.1.9",
+    "electron-reload": "^2.0.0",
+    "electron-builder": "^24.6.0"
+  },
+  "build": {
+    "appId": "com.nextash.app",
+    "productName": "ERPNext Desktop App",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icons/win/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icons/mac/icon.icns"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/icons/linux/icon.png"
+    }
+  }
+}
